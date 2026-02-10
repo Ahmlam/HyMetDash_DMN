@@ -1,0 +1,12 @@
+{
+  "fr": {
+    "title": "Tableau de Bord Hydrométéorologique — HyMetDash",
+    "map_tab": "Carte / Spatialisation",
+    "data_tab": "Stations Observées"
+  },
+  "en": {
+    "title": "Hydrometeorological Dashboard — HyMetDash",
+    "map_tab": "Map / Spatialization",
+    "data_tab": "Observed Stations"
+  }
+}

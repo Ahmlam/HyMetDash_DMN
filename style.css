@@ -1,0 +1,10 @@
+body {
+    background-color: #f9fafc;
+    color: #222;
+}
+h1, h2, h3 {
+    color: #f77f00;
+}
+.sidebar .sidebar-content {
+    background-color: #e9f5ee;
+}
