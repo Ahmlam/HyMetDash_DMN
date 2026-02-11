@@ -17,6 +17,8 @@ import plotly.graph_objects as go
 import streamlit as st
 from datetime import datetime, timedelta
 from PIL import Image
+import plotly.io as pio
+pio.kaleido.scope.chromium_executable = "/usr/bin/google-chrome"
 
 # ====== CONFIG GÉNÉRALE ======
 st.set_page_config(page_title="HyMetDash — SODEXAM", layout="wide", page_icon="🌦️")
