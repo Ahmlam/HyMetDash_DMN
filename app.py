@@ -17,6 +17,8 @@ import plotly.graph_objects as go
 import streamlit as st
 from datetime import datetime, timedelta
 from PIL import Image
+import plotly.io as pio
+pio.defaults.chromium_executable = "/usr/bin/google-chrome"
 
 # ====== CONFIG GÉNÉRALE ======
 st.set_page_config(page_title="HyMetDash — SODEXAM", layout="wide", page_icon="🌦️")
@@ -26,11 +28,11 @@ st.markdown(
 )
 
 # === CHEMINS DES FICHIERS ===
-DATA_EXCEL_DIR = data/Donnees_observées_1"
-STATIONS_FILE  = data/Sous_bassins_Fanfar_Civ/522_Stations_CI.xlsx"
-BASINS_DIR     = data/Sous_bassins_Fanfar_Civ"
-CIV_PATH       = data/Sous_bassins_Fanfar_Civ/gadm36_CIV_4.shp"
-LOGO_PATH      = data/logo_SODEXAM.png"
+DATA_EXCEL_DIR = "data/Donnees_observées_1"
+STATIONS_FILE  = "data/Sous_bassins_Fanfar_Civ/522_Stations_CI.xlsx"
+BASINS_DIR     = "data/Sous_bassins_Fanfar_Civ"
+CIV_PATH       = "data/Sous_bassins_Fanfar_Civ/gadm36_CIV_4.shp"
+LOGO_PATH      = "data/logo_SODEXAM.png"
 
 # =======================
 # UTILITAIRES & CALCULS
