@@ -47,15 +47,17 @@ def add_logo(fig):
         )
     return fig
 
-def export_plot(fig, fname_prefix):
-    import plotly.io as pio
-    for fmt, mime in [("png","image/png"),("jpg","image/jpeg"),("pdf","application/pdf")]:
+def export_plot(fig, filename="plot", fmt="png"):
+    try:
+        import plotly.io as pio
+        import io
         buf = io.BytesIO()
-        pio.write_image(fig, buf, format=fmt, scale=3)  # ~4K
-        st.download_button(f"💾 Export {fmt.upper()}",
-                           buf.getvalue(), file_name=f"{fname_prefix}.{fmt}", mime=mime,
-                           key=f"dl_{fname_prefix}_{fmt}")
-        buf.close()
+        pio.write_image(fig, buf, format=fmt, scale=3)
+        with open(f"{filename}.{fmt}", "wb") as f:
+            f.write(buf.getbuffer())
+    except Exception as e:
+        print(f"Export échoué : {e}")
+        # Sur Render, Kaleido échoue car Chrome n'est pas dispo.
 
 def _norm_cols(df: pd.DataFrame) -> pd.DataFrame:
     return df.rename(columns={c: c.strip().lower() for c in df.columns})
